@@ -9,7 +9,10 @@ assert_dir := assert
 # 源文件目录
 source_dir := src
 # 源文件
-source_files := test/helloworld.java
+source_files := \
+	generic/Game.java \
+	test/helloworld.java \
+
 # 目标文件目录
 target_dir := bin
 # 依赖库目录
