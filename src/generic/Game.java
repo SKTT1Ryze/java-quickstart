@@ -1,10 +1,12 @@
 package generic;
 
+import java.util.ArrayList;
+
 /**
  * game
  * Java 类和范型测试
  */
-public class Game<T> {
+public class Game<T extends java.lang.constant.Constable> {
     /**
      * 数据成员定义
      */
@@ -16,22 +18,22 @@ public class Game<T> {
     String name = new String("League of Ledgends");
     int cookie = 0;
     /**
-     * 范型成员
+     * 泛型成员
      */
-    T generic;
-
+    TObject<T> object;
+    GameIterator<T> iterator = new GameIterator<T>(new ArrayList<T>());
     /**
      * 方法成员定义
      */
-    public Game(T generic) {
-        this.generic = generic;
+    public Game(T inner) {
+        this.object = new TObject<T>(inner);
     }
-    public Game(T generic, int cookie) {
-        this.generic = generic;
+    public Game(T inner, int cookie) {
+        this.object.set_inner(inner);
         this.cookie = cookie;
     }
-    public Game(T generic, String name, int cookie) {
-        this.generic = generic;
+    public Game(T inner, String name, int cookie) {
+        this.object.set_inner(inner);
         this.name = name;
         this.cookie = cookie;
     }
@@ -41,7 +43,24 @@ public class Game<T> {
     public int cookie() {
         return this.cookie;
     }
-    public void print_generic() {
-        System.out.println(this.generic);
+    public T object_inner() {
+        return this.object.inner;
+    }
+    public GameIterator<T> iterator() {
+        return this.iterator;
+    }
+}
+
+class TObject<O> implements GameObject<O>{
+    public O inner;
+    public TObject(O inner) {
+        this.inner = inner;
+    }
+    public void translate() {}
+    public void set_inner(O inner) {
+        this.inner = inner;
+    }
+    public O inner() {
+        return this.inner;
     }
 }

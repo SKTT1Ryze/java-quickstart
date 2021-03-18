@@ -1,6 +1,6 @@
-package test;
+package main;
 import generic.Game;
-
+import generic.GameIterator;
 
 
 public class helloworld {
@@ -12,6 +12,16 @@ public class helloworld {
         assert(game.cookie() == 0);
         assert(game.name() == "League of Ledgends");
         System.out.printf("game name: %s\n", game.name());
-        game.print_generic();
+        System.out.println(game.object_inner());
+
+        GameIterator<String> iterator = game.iterator();
+        iterator.push("Rust ");
+        iterator.push("is ");
+        iterator.push("better ");
+        iterator.push("than ");
+        iterator.push("java.\n");
+        while(iterator.hasNext()) {
+            System.out.print(iterator.next());
+        }
     }
 }

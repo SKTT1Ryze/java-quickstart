@@ -3,15 +3,17 @@
 # 需要生成的 jar 包
 jar_pkg := java_test.jar
 # 项目的入口点
-entry_point := test.helloworld
+entry_point := main.helloworld
 # 资源目录，存放图片，文档等资源
 assert_dir := assert
 # 源文件目录
 source_dir := src
 # 源文件
 source_files := \
+	generic/GameObject.java \
+	generic/GameIterator.java \
 	generic/Game.java \
-	test/helloworld.java \
+	main/helloworld.java \
 
 # 目标文件目录
 target_dir := bin
