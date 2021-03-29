@@ -1,12 +1,11 @@
 package generic;
 
 import java.util.ArrayList;
-
 /**
  * game
  * Java 类和范型测试
  */
-public class Game<T extends java.lang.constant.Constable> {
+public class Game<T extends java.lang.Object> {
     /**
      * 数据成员定义
      */
